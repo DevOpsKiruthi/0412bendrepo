@@ -28,6 +28,10 @@ jobs:
         run: |
           dotnet build -c Release
           dotnet publish -c Release -o ./publish
+      - name: database update
+        run: |
+           dotnet ef database update
+        
         
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
